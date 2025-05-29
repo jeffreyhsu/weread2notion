@@ -82,44 +82,6 @@ def get_quote(content):
         },
     }
 
-def get_quote(content, style, colorStyle, reviewId):
-    # 根据不同的划线样式设置不同的emoji 直线type=0 背景颜色是1 波浪线是2
-    emoji = "〰️"
-    if style == 0:
-        emoji = "💡"
-    elif style == 1:
-        emoji = "⭐"
-    # 如果reviewId不是空说明是笔记
-    if reviewId != None:
-        emoji = "✍️"
-    color = "default"
-    # 根据划线颜色设置文字的颜色
-    if colorStyle == 1:
-        color = "red"
-    elif colorStyle == 2:
-        color = "purple"
-    elif colorStyle == 3:
-        color = "blue"
-    elif colorStyle == 4:
-        color = "green"
-    elif colorStyle == 5:
-        color = "yellow"
-    return {
-        "type": "quote",
-        "quote": {
-            "rich_text": [
-                {
-                    "type": "text",
-                    "text": {
-                        "content": content,
-                    },
-                }
-            ],
-            "color": color,
-        },
-    }
-
-
 def get_callout(content, style, colorStyle, reviewId):
     # 根据不同的划线样式设置不同的emoji 直线type=0 背景颜色是1 波浪线是2
     emoji = "〰️"
